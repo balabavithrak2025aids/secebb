@@ -1,7 +1,54 @@
 <html>
-	<head>
-		<title>
-			bb</title>
-	</head>
-	<p>hello</p>
+<head>
+    <title>smart notice board</title>
+    <style>
+        #head{
+            color: rgb(79, 185, 235);
+            text-align: center;
+            padding: 20px;
+        }
+        body{
+            background-image: url(https://th.bing.com/th/id/OIP.oIlZEHTFgc7OZXfVK8csgAHaEM?w=302&h=180&c=7&r=0&o=7&pid=1.7&rm=3);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        #textbox,#textarea{
+            background-color: rgb(79, 185, 235);
+            color:black ;
+        }
+        #button{
+            color: black;
+            background-color: rgb(79, 185, 235);
+        
+        }
+        #message{
+            text-align: center;
+            font-size: large;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="head">SMART NOTICE BOARD</h1>
+    <br><br>
+    <label>Enter heading:  </label>
+    <input type="text" id="textbox"><br><br>
+    <label>Enter details:  </label>
+    <textarea id="textarea" ></textarea><br><br>
+    <button id="button" onclick="upload()">UPLOAD</button>
+    <p id="message"></p>
+    <script>
+        
+        function upload(){
+            var h = document.getElementById("textbox").value;
+            var d = document.getElementById("textarea").value;
+
+            if (h.trim() === "" || d.trim() === "") {
+                alert("Please enter both heading and details.");
+                return;
+            }
+             
+            document.getElementById("message").innerHTML ="<p>" + h + "<p>" +"<p>" + d + "</p>";
+        }
+    </script>
+</body>
 </html>
